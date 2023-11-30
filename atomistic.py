@@ -28,7 +28,7 @@ def getLayers(z):
 def getNobleZ(period):
     return (period**3 + 6*period**2 + 14*period - period%2*(3*period + 6))//6
 
-# Predicats that checks if a given atomic number is Noble.
+# Predicat that checks if a given atomic number is Noble.
 def isNoble(z):
     return z == getNobleZ(getPeriod(z))
 
