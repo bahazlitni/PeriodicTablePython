@@ -74,4 +74,4 @@ function logAtom(z){
     console.log(`Period: ${getPeriod(z)}`)
     console.log(`Group : ${getGroup(z)} (${getRomanGroup(z)})`)
     console.log(`Layers: ${getLayers(z)}\n`)
-} 
+}
