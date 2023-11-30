@@ -69,12 +69,7 @@ def getRomanGroup(z):
 ROMAN  = ('I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII')
 LAYERS = ('s', 'p', 'd', 'f')
 
-# Test.
 if __name__ == '__main__':
-    # Arbitrary test function that logs information of a given atomic number.
-    def logAtom(z):
-
-    
     # Console test app.
     while True:
         inp = input('Z: ')
