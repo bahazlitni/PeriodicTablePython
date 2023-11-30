@@ -6,11 +6,9 @@ def getLayers(z):
     # Extends the atomic number l (sub-layer) to ascii based characters.
     def __strLayer(l):
         return (
-            LAYERS[l] if l<4 else 
-            chr(94+l) if chr(93+l) in LAYERS else 
-            chr(93+l)
+            LAYERS[l] if l<4 else chr(94+l) if 
+            chr(93+l) in LAYERS else chr(93+l)
         )
-    
     s, i = '', 0
     while True:
         for j in range((i+1)//2, i+1):
