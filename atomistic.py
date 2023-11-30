@@ -1,20 +1,22 @@
-# Extends the atomic number l (sub-layer) to ascii based characters.
-def strLayer(l):
-    return (
-        LAYERS[l] if l<4 else 
-        chr(94+l) if chr(93+l) in LAYERS else 
-        chr(93+l)
-    )
+
 
 # Returns a string of the atom's layers based on Schrodinger's Model.
 def getLayers(z):
+    # Extends the atomic number l (sub-layer) to ascii based characters.
+    def __strLayer(l):
+        return (
+            LAYERS[l] if l<4 else 
+            chr(94+l) if chr(93+l) in LAYERS else 
+            chr(93+l)
+        )
+    
     s, i = '', 0
     while True:
         for j in range((i+1)//2, i+1):
             n = j+1
             l = i-j
             c = 2+l*4
-            s += f'{n}{strLayer(l)} '
+            s += f'{n}{__strLayer(l)} '
             if(z>c):
                 s += f'{c}, ' 
                 z -= c; continue
@@ -71,15 +73,15 @@ LAYERS = ('s', 'p', 'd', 'f')
 if __name__ == '__main__':
     # Arbitrary test function that logs information of a given atomic number.
     def logAtom(z):
-        print(f'Atomic Number\t: {z}')
-        print(f'Valence Electrons: {getValence(z)}')
-        print(f'Period\t: {getPeriod(z)}')
-        print(f'Group\t: {getGroup(z)} ({getRomanGroup(z)})')
-        print(f'Layers\t: {getLayers(z)}')
+
     
     # Console test app.
     while True:
         inp = input('Z: ')
         if(inp == ''): break
-        logAtom(int(inp))
-        print()
+        z = int(inp)
+        print(f'Atomic Number\t: {z}')
+        print(f'Valence Electrons: {getValence(z)}')
+        print(f'Period\t: {getPeriod(z)}')
+        print(f'Group\t: {getGroup(z)} ({getRomanGroup(z)})')
+        print(f'Layers\t: {getLayers(z)}\n')
