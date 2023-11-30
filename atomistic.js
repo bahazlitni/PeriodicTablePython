@@ -14,7 +14,7 @@ function getLayers(z){
     }
     let s = '', i = 0
     while(true){
-        for (j = Math.ceil((i+1)/2); j<i+1; j++){
+        for (j = parseInt((i+1)/2); j<i+1; j++){
             const n = j+1, l = i-j, c = 2+l*4
             s += `${n}${__strLayer(l)} `
             if(z>c){
@@ -30,7 +30,7 @@ function getLayers(z){
 function getNobleZ(period){
     return (period**3 + 6*period**2 + 14*period - period%2*(3*period + 6))//6
 }
-// Predicat that checks if a given atomic number is Noble.
+// Predicats that checks if a given atomic number is Noble.
 function isNoble(z){
     return z == getNobleZ(getPeriod(z))
 }
@@ -74,4 +74,4 @@ function logAtom(z){
     console.log(`Period: ${getPeriod(z)}`)
     console.log(`Group : ${getGroup(z)} (${getRomanGroup(z)})`)
     console.log(`Layers: ${getLayers(z)}\n`)
-}
+} 
