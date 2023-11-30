@@ -72,8 +72,8 @@ if __name__ == '__main__':
         inp = input('Z: ')
         if(inp == ''): break
         z = int(inp)
-        print(f'Atomic Number\t: {z}')
+        print(f'Atomic Number (Z): {z}')
         print(f'Valence Electrons: {getValence(z)}')
-        print(f'Period\t: {getPeriod(z)}')
-        print(f'Group\t: {getGroup(z)} ({getRomanGroup(z)})')
-        print(f'Layers\t: {getLayers(z)}\n')
+        print(f'Period: {getPeriod(z)}')
+        print(f'Group : {getGroup(z)} ({getRomanGroup(z)})')
+        print(f'Layers: {getLayers(z)}\n')
