@@ -1,4 +1,5 @@
-
+ROMAN  = ('I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII')
+LAYERS = ('s', 'p', 'd', 'f')
 
 # Returns a string of the atom's layers based on Schrodinger's Model.
 def getLayers(z):
@@ -64,10 +65,6 @@ def getValence(z):
 def getRomanGroup(z):
     group = getGroup(z)
     return (ROMAN[getValenceByGroup(group)-1] + ('B' if group>2 and group<12 else 'A'))
-
-# Constants.
-ROMAN  = ('I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII')
-LAYERS = ('s', 'p', 'd', 'f')
 
 if __name__ == '__main__':
     # Console test app.
