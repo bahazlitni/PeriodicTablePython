@@ -77,6 +77,7 @@ if __name__ == '__main__':
         print(f'Group\t: {getGroup(z)} ({getRomanGroup(z)})')
         print(f'Layers\t: {getLayers(z)}')
     
+    # Console test app.
     while True:
         inp = input('Z: ')
         if(inp == ''): break
